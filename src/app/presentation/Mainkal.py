@@ -1,6 +1,7 @@
 
 from PyQt6.QtWidgets import QLabel, QVBoxLayout
 from PyQt6.QtCore import Qt
+
 from app.services.pomodoro_logic import TimerLogic
 from app.ui.window import MainWindow
 
