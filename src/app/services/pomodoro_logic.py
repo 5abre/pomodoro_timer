@@ -2,7 +2,7 @@ from PyQt6.QtCore import QTimer
 
 
 class TimerLogic:
-    def __init__(self, ui_update_back):
+    def __init__(self, ui_update_back) -> None:
         
         self.modes = [
             {"name": "25/5", "worktime": 25*60, "breaktime": 5*60},
@@ -21,13 +21,13 @@ class TimerLogic:
         
         self._update_ui()
 
-    def _update_ui(self):
+    def _update_ui(self) -> None:
 
         time_str = f"{self.time_left // 60:02d}:{self.time_left % 60:02d}"
         mode_str = f"{self.modes[self.current_mode]['name']} | {'Работа' if self.is_work_phase else 'Отдых'}"
         self.ui_update(time_str, mode_str, self.is_running)
 
-    def _update_timer(self):
+    def _update_timer(self) -> None:
 
         self.time_left -= 1
         
@@ -36,7 +36,7 @@ class TimerLogic:
         
         self._update_ui()
 
-    def _switch_phase(self):
+    def _switch_phase(self) -> None:
 
         self.is_work_phase = not self.is_work_phase
         
@@ -47,7 +47,7 @@ class TimerLogic:
             self.time_left = self.modes[self.current_mode]["breaktime"]
         
 
-    def toggle_timer(self):
+    def toggle_timer(self) -> None:
         """Запуск/пауза таймера"""
         if not self.is_running:
             self.timer.start()
@@ -57,7 +57,7 @@ class TimerLogic:
             self.is_running = False
         self._update_ui()
 
-    def reset_timer(self):
+    def reset_timer(self) -> None:
         """Сброс таймера"""
         self.timer.stop()
         self.is_running = False
@@ -65,7 +65,7 @@ class TimerLogic:
         self.time_left = self.modes[self.current_mode]["worktime"]
         self._update_ui()
 
-    def change_mode(self, mode_index):
+    def change_mode(self, mode_index) -> None:
         if 0 <= mode_index < len(self.modes):
             self.current_mode = mode_index
             self.reset_timer()

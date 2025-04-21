@@ -5,7 +5,7 @@ from app.services.pomodoro_logic import TimerLogic
 from app.ui.window import MainWindow
 
 class PomodoroApp(MainWindow):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         
         central_widget = self.centralWidget()
@@ -25,7 +25,7 @@ class PomodoroApp(MainWindow):
         
         self.pomodoro.reset_timer()
     
-    def update_ui(self, time_str, mode_str, is_running):
+    def update_ui(self, time_str, mode_str, is_running) -> None:
         self.timer_label.setText(time_str)
         self.status_label.setText(f"Режим: {mode_str}")
         self.start_button.setText("Пауза" if is_running else "Старт")

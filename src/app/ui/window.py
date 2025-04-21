@@ -4,7 +4,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtCore import QTimer
 
 class MainWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
         self.setWindowTitle("Таймер")
@@ -41,12 +41,12 @@ class MainWindow(QMainWindow):
         self.start_button.clicked.connect(self.start_action)
         self.stop_button.clicked.connect(self.stop_action)
 
-    def start_action(self):
+    def start_action(self) -> None:
         print("Процесс запущен")
         self.start_button.setEnabled(False)
         self.stop_button.setEnabled(True)
 
-    def stop_action(self):
+    def stop_action(self) -> None:
         print("Процесс остановлен")
         self.stop_button.setEnabled(False)
         self.start_button.setEnabled(True)
