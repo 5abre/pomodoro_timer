@@ -1,7 +1,3 @@
-* iniconfig==2.1.0
-* packaging==24.2
-* pluggy==1.5.0
-* PyQt6==6.9.0
-* PyQt6-Qt6==6.9.0
-* PyQt6_sip==13.10.0
-* pytest==8.3.5
+* Python 3.8+
+* PyQt6 6.0+
+
